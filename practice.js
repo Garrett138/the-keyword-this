@@ -1,11 +1,15 @@
 //We're in a job interview. Answer the following questions (try to not look at your notes unless you have to).
   // 1) What is the purpose of the 'this keyword'?
 
-      //Answer
+      To access the context of my function.
+      global space, window
+      object  - in the object
 
   // 2) What are the four rules that govern what the 'this keyword' is bound to and describe each?
 
-      //Answer
+    automatic to the global
+    it can be the object
+    .bind - binds the function with certain function that has certain context
 
   // 3) What is the difference between call and apply?
 
@@ -13,8 +17,8 @@
 
   // 4) What does .bind do?
 
-      //Answer
 
+gives you a new function bound to the context you give it..
 
 //Next Problem
 
@@ -23,7 +27,16 @@
   //email --> which is a string
   //getUsername --> which is a function that returns the current object's username property. *Don't use 'user' instead use the 'this' keyword*
 
-    //Code Here
+
+//
+
+    var user = {
+      username: "zerocool",
+      email: "crashandburn@gmail.com",
+      getUsername: function(){
+        return this.username
+      }
+    }
 
 //Now, invoke the getUsername method and verify you got the username of the object and not anything else.
 
@@ -33,7 +46,25 @@
 
 // Write a constructor function, including method definitions, which will make the following function invocations function properly.
 
-  //Function Invocations Here
+  //Function Invocations
+
+
+//constructor
+
+  function Car(maker, model, year, miles) {
+    this.maker = maker;
+    this.model = model;
+    this.year. = year;
+    this.miles = 0;
+
+    this.headline = this.maker + this.model;
+
+
+  this.moveCar = function (distance){
+     this.miles + distance;
+  }
+}
+
 
 var prius = new Car('Toyota', 'Prius', 2011);
 var mustang = new Car('Ford', 'Mustang', 2013);
@@ -81,4 +112,3 @@ var userName = getMyUsername(); //Fix this
 
 
 //Fix the getMyUsername invocation (stored in the userName variable, at the bottom of the above code) so that userName will be equal to 'iliketurtles'.
-
